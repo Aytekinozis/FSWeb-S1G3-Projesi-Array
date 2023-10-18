@@ -40,8 +40,9 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(dizi){
+let yenidizi = [...dizi];
+  return yenidizi
 }
 
 
@@ -56,8 +57,12 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(dizi){
+  if (dizi.length === 25){
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
@@ -74,10 +79,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(a, b){
+  a.unshift(b)
+  return a
+  
 }
-
+//cesitEkle(orijinalTatlar, "Kakule")
 
 /* Cörev 4:
 
@@ -92,10 +99,12 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(a){
+  a.pop();
+  return a;
 }
-
+//sonCesitiKaldir()
+//console.log(orijinalTatlar)
 
 /* Görev 5:
 Dizideki belirli bir indeksteki çeşniyi döndüren bir işlev yazın.
@@ -108,8 +117,9 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(a, b){
+  
+  return a[b]
 }
 
 
@@ -128,8 +138,10 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(a, b){
+  const silinecek = a.indexOf(b)
+  a.splice(silinecek, 1)
+  return a
 }
 
 
@@ -154,8 +166,14 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlar, filtre){
+  let yenitat = [];
+for (let i = 0; i < tatlar.length; i++) {
+  if (tatlar[i].includes(filtre)) {
+    yenitat.push(tatlar[i]);
+  }
+}
+return yenitat;
 }
 
 
